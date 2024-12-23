@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook</title>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="form bg-zinc-900 min-h-screen w-full text-white">
+<form class="p-4" action="/create" method="post">
+    <input class="block mx-auto w-full my-2 rounded-md h-10 text-lg p-2 outline-none bg-zinc-700" type="text" placeholder="Your title goes here..." name="title">
+    <textarea class="block mx-auto w-full my-2 rounded-md h-20 text-md p-2 outline-none bg-zinc-700 resize-none" placeholder="Enter your details here..." name="content"></textarea>
+    <input class="block bg-blue-600 mx-auto mt-4 px-3 py-3 text-sm rounded-md" type="submit" value="Create Task">
+</form>
+<div class="tasks rounded-md mt-8 mx-auto h-50 p-4 w-7/8 bg-zinc-800 flex flex-wrap gap-4 justify-between md:justify-start">
+
+  <% if(files.length > 0) { %>
+    <% files.forEach((val)=> { %>
+      <div class="p-2 border border-zinc-600 rounded-md flex-wrap flex h-40 w-36">
+      <h1 class="text-green-300 text-md mx-auto font-bold overflow-hidden">
+        <%= val.slice(0,-4) %> </h1>
+     <p class="h-20 mt-2 text-sm">this a description</p>
+        <div class="flex w-full items-center justify-between">
+   <a class="mt-2 text-sm inline-block text-blue-500" href="/files/<%= val %>">
+     <i class="text-lg fa-duotone fa-regular fa-folder-open fa-bounce" style="--fa-primary-color: #2197ff; --fa-secondary-color: #2197ff;"></i></a>
+    <a href="/edit/<%= val %>"><i class="text-lg fa-solid fa-pen-to-square fa-bounce" style="color: #63E6BE;"></i></a>
+        </div>
+      </div>
+    <% }) %>
+   <% } else { %>
+     <h1 class="text-zinc-500">Nothing to show...</h1>
+   <% } %>
+     
+   </div>
+</body>
+</html>

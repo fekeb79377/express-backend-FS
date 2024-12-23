@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Simple express demo application",
+  "type": "commonjs",
+  "module": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.9.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "git": "^0.1.5",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.9",
+    "npm": "^10.9.2"
+  }
+}
